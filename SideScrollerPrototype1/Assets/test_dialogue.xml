@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Dialogue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <nodes>
+    <DialogueNode>
+      <options>
+        <DialogueOption>
+          <Text>I'm out of here</Text>
+          <DestinationNodeId>1</DestinationNodeId>
+        </DialogueOption>
+        <DialogueOption>
+          <Text>Hello</Text>
+          <DestinationNodeId>2</DestinationNodeId>
+        </DialogueOption>
+      </options>
+      <NodeId>0</NodeId>
+      <Text>Hi, welcome to the test Dialogue</Text>
+    </DialogueNode>
+    <DialogueNode>
+      <options>
+        <DialogueOption>
+          <Text>Exit</Text>
+          <DestinationNodeId>-1</DestinationNodeId>
+        </DialogueOption>
+      </options>
+      <NodeId>1</NodeId>
+      <Text>Well, that's rude. I don't want to talk to you!</Text>
+    </DialogueNode>
+    <DialogueNode>
+      <options>
+        <DialogueOption>
+          <Text>My name is [player_name]. Nice to meet you [npc_name]</Text>
+          <DestinationNodeId>3</DestinationNodeId>
+        </DialogueOption>
+        <DialogueOption>
+          <Text>Call me [player_name]</Text>
+          <DestinationNodeId>3</DestinationNodeId>
+        </DialogueOption>
+      </options>
+      <NodeId>2</NodeId>
+      <Text>My name is [npc_name]. What it yours?</Text>
+    </DialogueNode>
+    <DialogueNode>
+      <options>
+        <DialogueOption>
+          <Text>Exit</Text>
+          <DestinationNodeId>-1</DestinationNodeId>
+        </DialogueOption>
+      </options>
+      <NodeId>3</NodeId>
+      <Text>Nice to meet you [player_name]</Text>
+    </DialogueNode>
+  </nodes>
+</Dialogue>
