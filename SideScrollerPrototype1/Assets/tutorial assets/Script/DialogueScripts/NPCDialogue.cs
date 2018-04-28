@@ -27,7 +27,7 @@ public class NPCDialogue : MonoBehaviour
     void Start()
     {
 
-        dia = Dialogue.LoadDialogue("/Assets/tutorial assets/Script/DialogueSctipts/" + DialogueDataFilePath);
+        dia = Dialogue.LoadDialogue("./Assets/tutorial assets/Script/DialogueScripts/" + DialogueDataFilePath);
 
         var canvas = GameObject.Find("DialogueCanvas");
         dialogue_window = Instantiate<GameObject>(DialogueWinowsPrefab);
