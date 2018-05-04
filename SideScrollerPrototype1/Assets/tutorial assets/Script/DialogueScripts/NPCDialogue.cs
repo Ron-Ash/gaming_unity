@@ -10,7 +10,7 @@ public class NPCDialogue : MonoBehaviour
     private Dialogue dia;
 
     private GameObject dialogue_window;
-
+        
     private GameObject node_text;
     private GameObject option_1;
     private GameObject option_2;
@@ -31,7 +31,7 @@ public class NPCDialogue : MonoBehaviour
 
         var canvas = GameObject.Find("DialogueCanvas");
         dialogue_window = Instantiate<GameObject>(DialogueWinowsPrefab);
-        dialogue_window.transform.parent = canvas.transform;
+        dialogue_window.transform.SetParent(canvas.transform);
 
         RectTransform dia_window_transform = (RectTransform)dialogue_window.transform;
 
