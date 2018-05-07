@@ -88,6 +88,7 @@ public class NPCDialogue : MonoBehaviour
             // display it.
             node_id = selected_option;
         }
+        DialogueWinowsPrefab.SetActive(false);
     }
 
     private void display_node(DialogueNode node)
