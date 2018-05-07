@@ -6,6 +6,10 @@ using UnityEngine.UI;
 
 public class NPCDialogue : MonoBehaviour
 {
+    public GameObject currentInterObject = null;
+    public InteractionObject currentInterObjectScript = null;
+    public PlayerInventory inventory;
+
 
     private Dialogue dia;
 
@@ -47,9 +51,8 @@ public class NPCDialogue : MonoBehaviour
         exit.GetComponent<Button>().onClick.AddListener(delegate { SetSelectedOption(-1); });
 
         dialogue_window.SetActive(false);
+        DialogueWinowsPrefab.SetActive(false);
 
-        RunDialogue();
-        
     }
 
     public void RunDialogue()
@@ -64,7 +67,6 @@ public class NPCDialogue : MonoBehaviour
 
     public IEnumerator run()
     {
-        dialogue_window.SetActive(true);
 
         // create an indexer, set it to 0 - the dialogue Start node.
         int node_id = 0;
@@ -90,6 +92,7 @@ public class NPCDialogue : MonoBehaviour
 
     private void display_node(DialogueNode node)
     {
+        DialogueWinowsPrefab.SetActive(true);
         // we get the Text componenet of the node_text and setting it's text value to the node.Text value from our DialogueTree
         node_text.GetComponent<Text>().text = node.Text;
 
@@ -135,6 +138,34 @@ public class NPCDialogue : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //If there is an NPC it will load up the interaction dialogue
+        if (Input.GetButton("Interact") && currentInterObject)
+        {
+            RunDialogue();
+            
+        }
 
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("NPC"))
+        {
+            Debug.Log(other.name);
+            currentInterObject = other.gameObject;
+            currentInterObjectScript = currentInterObject.GetComponent<InteractionObject>();
+        }
+
+    }
+
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("NPC"))
+        {
+            if (other.gameObject == currentInterObject)
+            {
+                currentInterObject = null;
+            }
+        }
     }
 }
