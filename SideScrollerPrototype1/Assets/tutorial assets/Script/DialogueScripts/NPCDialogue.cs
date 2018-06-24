@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿    using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DialogueTree;
@@ -89,6 +89,7 @@ public class NPCDialogue : MonoBehaviour
             node_id = selected_option;
         }
         DialogueWinowsPrefab.SetActive(false);
+     
     }
 
     private void display_node(DialogueNode node)
@@ -136,37 +137,20 @@ public class NPCDialogue : MonoBehaviour
         button.GetComponent<Button>().onClick.AddListener(delegate { SetSelectedOption(opt.DestinationNodeId); });           
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        //If there is an NPC it will load up the interaction dialogue
-        if (Input.GetButton("Interact") && currentInterObject)
-        {
-            RunDialogue();
-            
-        }
-
-    }
-
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("NPC"))
+        if(other.CompareTag("Player"))
         {
-            Debug.Log(other.name);
-            currentInterObject = other.gameObject;
-            currentInterObjectScript = currentInterObject.GetComponent<InteractionObject>();
+            RunDialogue();
         }
-
     }
 
     void OnTriggerExit2D(Collider2D other)
     {
-        if (other.CompareTag("NPC"))
+        if(other.CompareTag("Player"))
         {
-            if (other.gameObject == currentInterObject)
-            {
-                currentInterObject = null;
-            }
+            Destroy(dialogue_window);
+            Start();
         }
     }
 }

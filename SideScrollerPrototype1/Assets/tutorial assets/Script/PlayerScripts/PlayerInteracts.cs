@@ -22,6 +22,7 @@ public class PlayerInteracts : MonoBehaviour {
         {
             Debug.Log("interacted with " + currentInterObject.name);
         }
+        
     }
     
 
@@ -34,6 +35,13 @@ public class PlayerInteracts : MonoBehaviour {
             currentInterObject = other.gameObject;
             currentInterObjectScript = currentInterObject.GetComponent <InteractionObject>();
         }
+    
+        if (other.CompareTag("NPC"))
+        {
+            Debug.Log(other.name);
+            currentInterObject = other.gameObject;
+            currentInterObjectScript = currentInterObject.GetComponent<InteractionObject>();
+        }
 
     }
 
@@ -45,6 +53,14 @@ public class PlayerInteracts : MonoBehaviour {
             {
                 currentInterObject = null;
             }          
-        }     
+        } 
+
+        if (other.CompareTag("NPC"))
+        {
+            if (other.gameObject == currentInterObject)
+            {
+                currentInterObject = null;
+            }
+        }    
     }
 }
