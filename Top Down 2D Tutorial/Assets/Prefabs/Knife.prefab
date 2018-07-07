@@ -68,10 +68,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7ccc26b5ccc29d46ad7e03c769dc80d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackRate: 5
-  damage: 25
-  range: 150
+  attackRate: 1
+  damage: 5
+  range: 0
   melee: 1
+  weaponCollider: {fileID: 58014445995773420}
   weaponRenderer: {fileID: 212862531737255984}
   player: {fileID: 0}
   hit:
@@ -114,7 +115,7 @@ SpriteRenderer:
   m_SortingLayerID: 1735526263
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300002, guid: 1048cc3c362ade648ac1d7d31a56cf39, type: 3}
+  m_Sprite: {fileID: 21300024, guid: 1048cc3c362ade648ac1d7d31a56cf39, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
