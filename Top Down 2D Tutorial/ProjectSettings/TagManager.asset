@@ -9,6 +9,8 @@ TagManager:
   - Knife
   - WeaponsCase
   - WeaponName
+  - Health_Stamina
+  - NPC
   layers:
   - Default
   - TransparentFX

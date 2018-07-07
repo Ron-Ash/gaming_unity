@@ -7,7 +7,7 @@ public class PlayerMobility : MonoBehaviour {
 	public float speed;
 	public Rigidbody2D player;
 	public bool moving = false;
-
+	
 	void FixedUpdate()
 	{
 		var mousePosition = Camera.main.ScreenToWorldPoint (Input.mousePosition);
@@ -46,7 +46,7 @@ public class PlayerMobility : MonoBehaviour {
 	}
 
 	void movment()
-	{
+	{	
 		if(Input.GetKey(KeyCode.W))
 		{
 			transform.Translate(Vector3.up * speed * Time.deltaTime,Space.World);

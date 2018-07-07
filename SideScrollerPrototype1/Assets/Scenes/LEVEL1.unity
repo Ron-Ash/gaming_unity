@@ -2557,14 +2557,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1323576306}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 61167cd5cb99fa94fa512566c2928800, type: 3}
+  m_Script: {fileID: 11500000, guid: 4ea2fa3d44514344780df0331855f531, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentInterObject: {fileID: 1323576306}
+  currentInterObject: {fileID: 0}
   currentInterObjectScript: {fileID: 0}
   inventory: {fileID: 0}
-  DialogueDataFilePath: test_dialogue.xml
-  DialogueWinowsPrefab: {fileID: 1858284744}
+  DialogueDataFilePath: 
+  DialogueWinowsPrefab: {fileID: 0}
 --- !u!58 &1323576310
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -3497,11 +3497,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4473847201686262, guid: 26c77507847d7084883fb0391cc34905,
     type: 2}
   m_PrefabInternal: {fileID: 525433575}
---- !u!1 &1858284744 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1055472970624708, guid: ec9e516f6848f824e9967ef5b7ad1fc4,
-    type: 2}
-  m_PrefabInternal: {fileID: 1623216772}
 --- !u!1 &1882533232 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1248899453471992, guid: 1a481df0eceae684188dc1f73d8357fe,

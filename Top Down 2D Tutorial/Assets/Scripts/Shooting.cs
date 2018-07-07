@@ -16,7 +16,7 @@ public class Shooting : MonoBehaviour {
 		weaponSwiching = weaponsCase.GetComponent<WeaponSwiching>();
 	}
 	
-	void FixedUpdate () 
+	void FixedUpdate()
 	{
 		if(weaponsCase.transform.childCount > 0)
 		{

@@ -13,7 +13,6 @@ public class Health_Stamina : MonoBehaviour {
 	public Transform HealthMeter;
     public Transform StaminaMeter;
 
-
 	void Start () 
 	{
 		currentHealth = maxHealth;
