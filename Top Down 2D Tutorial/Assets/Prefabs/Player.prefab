@@ -40,6 +40,7 @@ GameObject:
   - component: {fileID: 61494865108705938}
   - component: {fileID: 114695797772992768}
   - component: {fileID: 95112543520261122}
+  - component: {fileID: 114520606203435606}
   m_Layer: 31
   m_Name: Player
   m_TagString: Player
@@ -56,6 +57,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4221539021989628}
   - component: {fileID: 114367963742407968}
+  - component: {fileID: 60433435742666680}
+  - component: {fileID: 114275966838533094}
   m_Layer: 0
   m_Name: FirePoint
   m_TagString: Untagged
@@ -73,6 +76,7 @@ GameObject:
   - component: {fileID: 4171258092227998}
   - component: {fileID: 212025753252536020}
   - component: {fileID: 114976468509892664}
+  - component: {fileID: 58379761866788914}
   m_Layer: 0
   m_Name: Fist
   m_TagString: Untagged
@@ -155,6 +159,55 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!58 &58379761866788914
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1792824984704588}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
+--- !u!60 &60433435742666680
+PolygonCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1529101266205594}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.07160973, y: 0.23230918}
+      - {x: 0.13693021, y: 0.18339728}
+      - {x: 0.2036696, y: 0.106320605}
+      - {x: 0.25, y: 0}
+      - {x: -0.25, y: 0}
+      - {x: -0.23126288, y: 0.059128776}
+      - {x: -0.1818784, y: 0.118257776}
+      - {x: -0.13374247, y: 0.17293458}
+      - {x: -0.07581533, y: 0.21878241}
+      - {x: -0.004284926, y: 0.23714493}
 --- !u!61 &61494865108705938
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -198,6 +251,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114275966838533094
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1529101266205594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23113fdf2af49aa468c57e6821b08866, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponsCase: {fileID: 1096788268154816}
+  enemy: {fileID: 0}
 --- !u!114 &114367963742407968
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -209,8 +275,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5f984ebf8c5fe54f8cf66974d36b9b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponsCase: {fileID: 1096788268154816}
-  firePoint: {fileID: 4221539021989628}
 --- !u!114 &114375225214356476
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -233,6 +297,18 @@ MonoBehaviour:
   hit:
     serializedVersion: 2
     m_Bits: 0
+  weaponCollider: {fileID: 0}
+--- !u!114 &114520606203435606
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1295410906180218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae6b90e716547aa40ad769a51d8204ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114695797772992768
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -262,6 +338,7 @@ MonoBehaviour:
   damage: 1
   range: 0
   melee: 1
+  weaponCollider: {fileID: 0}
   weaponRenderer: {fileID: 212025753252536020}
   player: {fileID: 0}
   hit:
