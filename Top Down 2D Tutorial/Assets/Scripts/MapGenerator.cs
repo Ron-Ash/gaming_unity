@@ -21,6 +21,7 @@ public class MapGenerator : MonoBehaviour {
 		GenerateMap();
 	}
 
+
 	void GenerateMap()
 	{
 		map = new int[width, height];
@@ -108,7 +109,7 @@ public class MapGenerator : MonoBehaviour {
 				for(int y = 0; y < height; y++)
 				{
 					Gizmos.color = (map[x,y]== 1)?Color.black: Color.white;
-					Vector3 pos = new Vector3(-width/2 + x + 0.5f, 0, -height/2 + y + 0.5f);
+					Vector3 pos = new Vector3(-width/2 + x + 0.5f, -height/2 + y + 0.5f, 25);
 					Gizmos.DrawCube(pos,Vector3.one);
 				}
 			}

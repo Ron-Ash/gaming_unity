@@ -45,13 +45,16 @@ TagManager:
   - Enemy
   - Player
   m_SortingLayers:
+  - name: Map
+    uniqueID: 3807690903
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
   - name: Objects
     uniqueID: 1735526263
     locked: 0
-  - name: New Layer
+  - name: Enemy
     uniqueID: 2532556851
     locked: 0
   - name: Player

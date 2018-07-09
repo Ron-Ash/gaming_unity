@@ -76,7 +76,7 @@ public class WeaponSwiching : MonoBehaviour {
 				ammo = weaponsStatsPickUp.ammo;
 				clipSize = weaponsStatsPickUp.clipSize;
 				weaponCollider.enabled = false;
-				
+	
 			}
 			else
 			{
