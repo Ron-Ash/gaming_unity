@@ -21,7 +21,6 @@ public class CamerSystemPrototype : MonoBehaviour {
         playerMobility = player.GetComponent<PlayerMobility>();
         mainCamera = GetComponent<Camera>();
         mainCamera = Camera.main;
-        mainCamera.orthographicSize = 2.5f;
     }
 
     void FixedUpdate()
@@ -36,7 +35,7 @@ public class CamerSystemPrototype : MonoBehaviour {
         }
         else
         {
-            mainCamera.orthographicSize = 2.5f;
+            mainCamera.orthographicSize = 2.0f;
             followPlayer();
         }  
     }

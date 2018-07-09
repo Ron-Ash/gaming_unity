@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
 
-public class Dialogues : MonoBehaviour {
+public class DialogueForJeff : MonoBehaviour {
 
 	private ModalPanel modalPanel;
 
@@ -19,13 +19,13 @@ public class Dialogues : MonoBehaviour {
 	{
 		modalPanel = ModalPanel.Instance();
 
-		yesEvent = new UnityAction(Testbutton1);
-		noEvent = new UnityAction(Testbutton2);
-		cancelEvent = new UnityAction(TestCancel);
+		yesEvent = new UnityAction(Yes);
+		noEvent = new UnityAction(No);
+		cancelEvent = new UnityAction(Cancel);
 
-		yesEvent2 = new UnityAction(Testbutton12);
-		noEvent2 = new UnityAction(Testbutton22);
-		cancelEvent2 = new UnityAction(TestCancel2);
+		yesEvent2 = new UnityAction(Yes2);
+		noEvent2 = new UnityAction(No2);
+		cancelEvent2 = new UnityAction(Cancel2);
 	}
 
 	public void Interact()
@@ -33,37 +33,37 @@ public class Dialogues : MonoBehaviour {
 		modalPanel.Choice("Would you like a poke in the eye?\nHow about with a sharp stick?", yesEvent, noEvent, cancelEvent);
 	}
 	
-	void Testbutton1()
+	void Yes()
 	{
 		modalPanel.Choice("ok", yesEvent2, noEvent2, cancelEvent2);
 		Debug.Log("Heck yeah!!!");
 	}
 
-	void Testbutton2()
+	void No()
 	{
 		modalPanel.Choice("are you sure?", yesEvent2, noEvent2, cancelEvent2);
 		Debug.Log("NOOOO!!!");
 	}
 
-	void TestCancel()
+	void Cancel()
 	{
 		Debug.Log("I give up");
 		modalPanel.closePanel();
 	}
 
-	void Testbutton12()
+	void Yes2()
 	{
 		Debug.Log("yep");
 		modalPanel.closePanel();
 	}
 
-	void Testbutton22()
+	void No2()
 	{
 		Debug.Log("Nah");
 		modalPanel.closePanel();
 	}
 
-	void TestCancel2()
+	void Cancel2()
 	{
 		Debug.Log("f*#k you");
 		modalPanel.closePanel();

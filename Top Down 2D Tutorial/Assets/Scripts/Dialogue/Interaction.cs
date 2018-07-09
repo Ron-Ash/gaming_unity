@@ -5,20 +5,32 @@ using UnityEngine;
 public class Interaction : MonoBehaviour {
 
 	private GameObject NPC;
-    private Dialogues dialogues;
+    private DialogueForJeff dialogueForJeff;
+	private DialogueForGeorge dialogueForGeorge;
 
-	void Awake()
+	void Start()
 	{
 		NPC = GameObject.FindGameObjectWithTag("NPC");
-		dialogues = NPC.GetComponent<Dialogues>();
+		dialogueForJeff = NPC.GetComponent<DialogueForJeff>();
+		dialogueForGeorge = NPC.GetComponent<DialogueForGeorge>();
 	}
 
 	void OnMouseDown()
     {
 		if(gameObject.tag == "NPC")
 		{
-			Debug.Log("I dont like you!!!");
-			dialogues.Interact();
+			if(gameObject.name == "Jeff")
+			{
+				dialogueForJeff.Interact();
+			}
+			else if(gameObject.name == "George")
+			{
+				dialogueForGeorge.Interact();
+			}
+			else
+			{
+				Debug.Log("I dont like you!!!");
+			}
 		}
 		else
 		{

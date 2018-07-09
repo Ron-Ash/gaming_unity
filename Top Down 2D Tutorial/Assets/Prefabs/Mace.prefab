@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212320753793831770}
   - component: {fileID: 114881453034018848}
   - component: {fileID: 58235807536031088}
+  - component: {fileID: 114186290780054244}
   m_Layer: 29
   m_Name: Mace
   m_TagString: Weapon
@@ -36,7 +37,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1138472923741986}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.09, y: -0.92, z: 0}
+  m_LocalPosition: {x: -2.328, y: -0.057, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -57,6 +58,17 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1
+--- !u!114 &114186290780054244
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1138472923741986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae6b90e716547aa40ad769a51d8204ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114881453034018848
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -28,20 +28,20 @@ public class ModalPanel : MonoBehaviour {
 	}
 
 	// Yes/No/Cancel: A string, a yes event, a no event, a cancel event
-	public void Choice(string question , UnityAction yesEvent, UnityAction noEvent, UnityAction calcelEvent)
+	public void Choice(string question , UnityAction Button1Action, UnityAction Button2Action, UnityAction calcelEvent)
 	{
 		modalPanelObject.SetActive(true);
 		this.question.text = question;
-		this.iconImage.gameObject.SetActive(false);
+		this.iconImage.gameObject.SetActive(true);
 		button1.gameObject.SetActive(true);
 		button2.gameObject.SetActive(true);
 		cancelButton.gameObject.SetActive(true);
 
 		button1.onClick.RemoveAllListeners();
-		button1.onClick.AddListener(yesEvent);
+		button1.onClick.AddListener(Button1Action);
 
 		button2.onClick.RemoveAllListeners();
-		button2.onClick.AddListener(noEvent);
+		button2.onClick.AddListener(Button2Action);
 
 		cancelButton.onClick.RemoveAllListeners();
 		cancelButton.onClick.AddListener(calcelEvent);

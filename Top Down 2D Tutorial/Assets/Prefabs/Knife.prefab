@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212862531737255984}
   - component: {fileID: 114202313101743852}
   - component: {fileID: 58014445995773420}
+  - component: {fileID: 114528288709122522}
   m_Layer: 29
   m_Name: Knife
   m_TagString: Weapon
@@ -36,7 +37,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1869377585671988}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.688, y: 0.07722406, z: 0}
+  m_LocalPosition: {x: 1.294, y: -0.902, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -80,6 +81,17 @@ MonoBehaviour:
     m_Bits: 2147483615
   ammo: 25
   clipSize: 5
+--- !u!114 &114528288709122522
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1869377585671988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae6b90e716547aa40ad769a51d8204ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212862531737255984
 SpriteRenderer:
   m_ObjectHideFlags: 1
