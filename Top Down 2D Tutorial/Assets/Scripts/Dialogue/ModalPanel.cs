@@ -31,27 +31,24 @@ public class ModalPanel : MonoBehaviour {
 	public void Choice(string question , UnityAction yesEvent, UnityAction noEvent, UnityAction calcelEvent)
 	{
 		modalPanelObject.SetActive(true);
-
-		button1.onClick.RemoveAllListeners();
-		button1.onClick.AddListener(yesEvent);
-		button1.onClick.AddListener(closePanel);
-
-		button2.onClick.RemoveAllListeners();
-		button2.onClick.AddListener(noEvent);
-		button1.onClick.AddListener(closePanel);
-
-		cancelButton.onClick.RemoveAllListeners();
-		cancelButton.onClick.AddListener(calcelEvent);
-		cancelButton.onClick.AddListener(closePanel);
-
 		this.question.text = question;
 		this.iconImage.gameObject.SetActive(false);
 		button1.gameObject.SetActive(true);
 		button2.gameObject.SetActive(true);
 		cancelButton.gameObject.SetActive(true);
+
+		button1.onClick.RemoveAllListeners();
+		button1.onClick.AddListener(yesEvent);
+
+		button2.onClick.RemoveAllListeners();
+		button2.onClick.AddListener(noEvent);
+
+		cancelButton.onClick.RemoveAllListeners();
+		cancelButton.onClick.AddListener(calcelEvent);
+
 	}
 
-	void closePanel()
+	public void closePanel()
 	{
 		modalPanelObject.SetActive(false);
 	}

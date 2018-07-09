@@ -21,6 +21,8 @@ GameObject:
   - component: {fileID: 4116117086128116}
   - component: {fileID: 212717802460977308}
   - component: {fileID: 61234882314009234}
+  - component: {fileID: 114674099309186482}
+  - component: {fileID: 114408541182674226}
   m_Layer: 0
   m_Name: NPC
   m_TagString: NPC
@@ -50,7 +52,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.05, y: -0.05}
@@ -66,6 +68,30 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.75, y: 0.55}
   m_EdgeRadius: 0
+--- !u!114 &114408541182674226
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1041970838553330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ca077bbf22ab6546ad165b25ba7c4fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114674099309186482
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1041970838553330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae6b90e716547aa40ad769a51d8204ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NPC: {fileID: 1041970838553330}
+  dialogues: {fileID: 114408541182674226}
 --- !u!212 &212717802460977308
 SpriteRenderer:
   m_ObjectHideFlags: 1
