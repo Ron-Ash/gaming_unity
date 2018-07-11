@@ -11,6 +11,7 @@ TagManager:
   - WeaponName
   - Health_Stamina
   - NPC
+  - PersonalDialogue
   layers:
   - Default
   - TransparentFX

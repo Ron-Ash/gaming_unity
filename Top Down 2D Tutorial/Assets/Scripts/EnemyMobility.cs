@@ -8,6 +8,7 @@ public class EnemyMobility : MonoBehaviour {
 	public Transform player;
 	public Rigidbody2D enemy;
 	public float enemyHealth = 100;
+	
 
 	void FixedUpdate()
 	{

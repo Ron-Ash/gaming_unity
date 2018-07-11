@@ -36,10 +36,36 @@ public class Health_Stamina : MonoBehaviour {
         {
             SceneManager.LoadScene(0);
         }
+
+		if (currentHealth < 500 && currentHealth > 251)
+		{
+			HealthMeter.GetComponent<Image>().color = new Color(0, 1, 0);
+		}
+
+		if(currentHealth<maxHealth)
+		{
+			currentHealth = currentHealth+0.05f;
+		}
+
+
+		if (currentStamina < 150)
+        {
+            StaminaMeter.GetComponent<Image>().color = new Color(1, 1, 0);
+        }
+
+		if (currentStamina < 50)
+        {
+            StaminaMeter.GetComponent<Image>().color = new Color(1, 0, 0);
+        }
+
+		if (currentStamina < 500 && currentStamina > 150)
+		{
+			StaminaMeter.GetComponent<Image>().color = new Color(0.225f, 0.553f, 0.868f, 1.000f);
+		}
 		
 		if(currentStamina<maxStamina)
 		{
-			currentStamina = currentStamina+0.5f;
+			currentStamina = currentStamina+0.1f;
 		}
 
 		HealthMeter.GetComponent<RectTransform>().localScale = new Vector3(currentHealth / maxHealth, 1, 1);

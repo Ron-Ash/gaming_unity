@@ -8,9 +8,13 @@ public class MeleeAttack : MonoBehaviour {
 	WeaponSwiching weaponSwiching;
 	EnemyMobility enemyMobility;
 	public GameObject enemy;
+	public GameObject health_stamina_bars;
+	Health_Stamina health_stamina;
 
 	void Start () 
 	{
+		health_stamina_bars = GameObject.FindGameObjectWithTag("Health_Stamina");
+        health_stamina = health_stamina_bars.GetComponent<Health_Stamina>();
 		weaponsCase = GameObject.FindGameObjectWithTag("WeaponsCase");
 		weaponSwiching = weaponsCase.GetComponent<WeaponSwiching>();
 		enemy = GameObject.FindGameObjectWithTag("Enemy");
@@ -25,7 +29,7 @@ public class MeleeAttack : MonoBehaviour {
 			if(!Input.GetKey(KeyCode.LeftShift))
 			{
 			
-				if(Input.GetButtonDown("Fire") && coll.gameObject.tag == "Enemy")
+				if(Input.GetButtonDown("Fire") && coll.gameObject.tag == "Enemy" && health_stamina.currentStamina > 0)
 				{
 					shoot();
 				}
@@ -37,5 +41,6 @@ public class MeleeAttack : MonoBehaviour {
 	{
 		Debug.Log("swing...swoosh");
 		enemyMobility.enemyHealth = enemyMobility.enemyHealth - weaponSwiching.damage;
+		health_stamina.currentStamina = health_stamina.currentStamina-weaponSwiching.attackRate;
 	}
 }

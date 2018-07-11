@@ -1,15 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Interaction : MonoBehaviour {
 
 	private GameObject NPC;
     private DialogueForJeff dialogueForJeff;
 	private DialogueForGeorge dialogueForGeorge;
+	private Text NPCText;
 
 	void Start()
 	{
+		NPCText = GameObject.Find("PersonalDialogue").GetComponent<Text>();
 		NPC = GameObject.FindGameObjectWithTag("NPC");
 		dialogueForJeff = NPC.GetComponent<DialogueForJeff>();
 		dialogueForGeorge = NPC.GetComponent<DialogueForGeorge>();
@@ -23,18 +26,20 @@ public class Interaction : MonoBehaviour {
 			{
 				dialogueForJeff.Interact();
 			}
-			else if(gameObject.name == "George")
+
+			if(gameObject.name == "George")
 			{
 				dialogueForGeorge.Interact();
 			}
-			else
+
+			if (gameObject.name == "NPC")
 			{
-				Debug.Log("I dont like you!!!");
+				NPCText.text = "He doesn't seem freindly, better stay away";
 			}
 		}
 		else
 		{
-			Debug.Log(gameObject.name + " : " + gameObject.tag);
+			NPCText.text = gameObject.name + " : " + gameObject.tag;
 		}
     }
 }
