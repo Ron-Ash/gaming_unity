@@ -40,7 +40,7 @@ public class MeleeAttack : MonoBehaviour {
 	void shoot()
 	{
 		Debug.Log("swing...swoosh");
-		enemyMobility.enemyHealth = enemyMobility.enemyHealth - weaponSwiching.damage;
-		health_stamina.currentStamina = health_stamina.currentStamina-weaponSwiching.attackRate;
+		enemyMobility.enemyHealth -= weaponSwiching.damage;
+		health_stamina.currentStamina -= weaponSwiching.attackRate;
 	}
 }
