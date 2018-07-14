@@ -23,7 +23,7 @@ public class WeaponSwiching : MonoBehaviour {
 	}
 	
 
-	void Update () 
+	void FixedUpdate () 
 	{
 		int previousSelectedWeapon = selectedWeapon;
 

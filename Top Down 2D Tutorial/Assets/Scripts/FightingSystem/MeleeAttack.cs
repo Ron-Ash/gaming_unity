@@ -10,6 +10,7 @@ public class MeleeAttack : MonoBehaviour {
 	public GameObject enemy;
 	public GameObject health_stamina_bars;
 	Health_Stamina health_stamina;
+	public bool shield;
 
 	void Start () 
 	{
@@ -19,6 +20,22 @@ public class MeleeAttack : MonoBehaviour {
 		weaponSwiching = weaponsCase.GetComponent<WeaponSwiching>();
 		enemy = GameObject.FindGameObjectWithTag("Enemy");
 		enemyMobility = enemy.GetComponent<EnemyMobility>();
+		shield = false;
+
+	}
+	void FixedUpdate()
+	{		
+		if(Input.GetMouseButton(1) && health_stamina.currentStamina > 50)
+		{
+			shield = true;
+			Debug.Log("Defence On");
+			health_stamina.currentStamina -= 0.15f;
+		}
+		else
+		{
+			shield = false;
+			Debug.Log("Defence Off");
+		}	
 	}
 
 	void OnTriggerStay2D(Collider2D coll)
@@ -26,7 +43,7 @@ public class MeleeAttack : MonoBehaviour {
 		
 		if(weaponsCase.transform.childCount > 0)
 		{
-			if(!Input.GetKey(KeyCode.LeftShift))
+			if(!Input.GetKey(KeyCode.LeftShift) && !Input.GetMouseButton(1))
 			{
 			
 				if(Input.GetButtonDown("Fire") && coll.gameObject.tag == "Enemy" && health_stamina.currentStamina > 0)

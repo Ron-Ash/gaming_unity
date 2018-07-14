@@ -12,12 +12,17 @@ public class EnemyMobility : MonoBehaviour {
 	public GameObject health_stamina_bars;
 	Health_Stamina health_stamina;
 	public Collider2D playerCollider;
+	public GameObject playerGameObject;
+	MeleeAttack meleeAttack;
 
 	void Start () 
 	{
 		health_stamina_bars = GameObject.FindGameObjectWithTag("Health_Stamina");
         health_stamina = health_stamina_bars.GetComponent<Health_Stamina>();
+		playerGameObject = GameObject.FindGameObjectWithTag("Player");
+		meleeAttack = playerGameObject.GetComponent<MeleeAttack>();
 	}	
+
 	
 
 	void FixedUpdate()
@@ -38,30 +43,41 @@ public class EnemyMobility : MonoBehaviour {
 		if(coll.gameObject.tag == "Player")
 		{
 			playerCollider = coll;
-			Attack();
+			StartAttackCounter();
 		}
 	}
+
 	void OnTriggerExit2D(Collider2D coll)
 	{
 		playerCollider = null;
 	}
 
-	void Attack()
-	{
-		Debug.Log("start attack");
-		//if(playerCollider?.gameObject.tag == "Player" )
-		if(playerCollider && (playerCollider.gameObject.tag == "Player" ) )
+	void DoAttack()
+	{		
+		if(playerCollider && playerCollider.gameObject.tag == "Player")
 		{
-			if(!Input.GetMouseButton(1))
+			if(!meleeAttack.shield)
 			{
 				Debug.Log("hit");
 				health_stamina.currentHealth -= damage;
 			}
-			Invoke("Attack", 2);
+			else
+			{
+				health_stamina.currentStamina -= (damage*1.5f);
+			}
+			StartAttackCounter();
 		}
 		else
 		{
-			Debug.Log("wrong collider!!");		
+			Debug.Log("the target escaped");		
 		}
+	}
+	void StartAttackCounter()
+	{
+		if(playerCollider)
+		{
+			Debug.Log("start attack");
+			Invoke("DoAttack", 2);
+		}		
 	}
 }
