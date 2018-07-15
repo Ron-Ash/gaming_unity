@@ -25,11 +25,10 @@ public class MeleeAttack : MonoBehaviour {
 	}
 	void FixedUpdate()
 	{		
-		if(Input.GetMouseButton(1) && health_stamina.currentStamina > 50)
+		if(Input.GetMouseButton(1) && health_stamina.currentShield > 0)
 		{
 			shield = true;
 			Debug.Log("Defence On");
-			health_stamina.currentStamina -= 0.15f;
 		}
 		else
 		{

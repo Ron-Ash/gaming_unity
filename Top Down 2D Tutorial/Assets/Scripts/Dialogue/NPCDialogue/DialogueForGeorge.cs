@@ -61,11 +61,13 @@ public class DialogueForGeorge : MonoBehaviour {
 	{
 		NPCText.text = "what a nice person";
 		modalPanel.closePanel();
+		Destroy(GetComponent<DialogueForGeorge>());
 	}
 
 	void Yes2()
 	{
 		NPCText.text = "what a nice person";
 		modalPanel.closePanel();
+		Destroy(GetComponent<DialogueForGeorge>());
 	}
 }

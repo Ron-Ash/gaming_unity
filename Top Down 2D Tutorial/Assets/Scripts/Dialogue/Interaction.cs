@@ -13,9 +13,6 @@ public class Interaction : MonoBehaviour {
 	void Start()
 	{
 		NPCText = GameObject.Find("PersonalDialogue").GetComponent<Text>();
-		NPC = GameObject.FindGameObjectWithTag("NPC");
-		dialogueForJeff = NPC.GetComponent<DialogueForJeff>();
-		dialogueForGeorge = NPC.GetComponent<DialogueForGeorge>();
 	}
 
 	void OnMouseDown()
@@ -24,15 +21,17 @@ public class Interaction : MonoBehaviour {
 		{
 			if(gameObject.name == "Jeff")
 			{
+				gameObject.AddComponent<DialogueForJeff>();
+				dialogueForJeff = gameObject.GetComponent<DialogueForJeff>();
 				dialogueForJeff.Interact();
 			}
-
-			if(gameObject.name == "George")
+			else if(gameObject.name == "George")
 			{
+				gameObject.AddComponent<DialogueForGeorge>();
+				dialogueForGeorge = gameObject.GetComponent<DialogueForGeorge>();
 				dialogueForGeorge.Interact();
 			}
-
-			if (gameObject.name == "NPC")
+			else
 			{
 				NPCText.text = "He doesn't seem freindly, better stay away";
 			}

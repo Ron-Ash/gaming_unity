@@ -7,27 +7,41 @@ using UnityEngine.UI;
 public class Health_Stamina : MonoBehaviour {
 
 	public float currentHealth;
-	float maxHealth = 500.0f;
-	public float currentStamina;
-	float maxStamina = 500.0f;
+	float maxHealth = 100.0f;
 	public Transform HealthMeter;
+
+	public float currentStamina;
+	float maxStamina = 100.0f;
     public Transform StaminaMeter;
+
+	public float currentShield;
+	float maxShield = 100.0f;
+	public Transform ShieldMeter;
+	public Text HealthBar;
+	public Text StaminaBar;
+	public Text ShieldBar;
+
 
 	void Start () 
 	{
 		currentHealth = maxHealth;
 		currentStamina = maxStamina;
+		currentShield = maxShield;
 		HealthMeter.GetComponent<Image>().color = new Color(0, 1, 0);
 	}
 	
 	void FixedUpdate ()
 	{
-		if (currentHealth < 251)
+		HealthBar.text = currentHealth.ToString("f0") + " / " + maxHealth;
+		StaminaBar.text = currentStamina.ToString("f0") + " / " + maxStamina;
+		ShieldBar.text = currentShield.ToString("f0") + " / " + maxShield;
+		 
+		if (currentHealth < (maxHealth/2))
         {
             HealthMeter.GetComponent<Image>().color = new Color(1, 1, 0);
         }
 
-        if (currentHealth < 101)
+        if (currentHealth < (maxHealth/10))
         {
             HealthMeter.GetComponent<Image>().color = new Color(1, 0, 0);
         }
@@ -37,39 +51,61 @@ public class Health_Stamina : MonoBehaviour {
             SceneManager.LoadScene(0);
         }
 
-		if (currentHealth < 500 && currentHealth > 251)
+		if (currentHealth < maxHealth && currentHealth > (maxHealth/2))
 		{
 			HealthMeter.GetComponent<Image>().color = new Color(0, 1, 0);
 		}
 
-		if(currentHealth<maxHealth)
-		{
-			currentHealth = currentHealth+0.05f;
-		}
 
-
-		if (currentStamina < 150)
+		if (currentStamina < (maxStamina/2))
         {
             StaminaMeter.GetComponent<Image>().color = new Color(1, 1, 0);
         }
 
-		if (currentStamina < 50)
+		if (currentStamina < (maxStamina/10))
         {
             StaminaMeter.GetComponent<Image>().color = new Color(1, 0, 0);
         }
 
-		if (currentStamina < 500 && currentStamina > 150)
+		if (currentStamina < maxStamina && currentStamina > (maxStamina/2))
 		{
 			StaminaMeter.GetComponent<Image>().color = new Color(0.225f, 0.553f, 0.868f, 1.000f);
 		}
 		
 		if(currentStamina<maxStamina)
 		{
-			currentStamina = currentStamina+0.1f;
+			currentStamina += 0.1f;
+		}
+
+		if(currentShield<maxShield)
+		{
+			currentShield += 0.05f;
+		}
+
+		if(currentHealth<maxHealth)
+		{
+			currentHealth += 0.05f;
+		}
+
+		if(currentHealth< 0)
+		{
+			currentHealth = 0;
+		}
+
+		if(currentShield < 0)
+		{
+			currentShield = 0;
+		}
+
+		if(currentStamina < 0)
+		{
+			currentStamina = 0;
 		}
 
 		HealthMeter.GetComponent<RectTransform>().localScale = new Vector3(currentHealth / maxHealth, 1, 1);
 
-        StaminaMeter.GetComponent<RectTransform>().localScale = new Vector3(currentStamina / maxStamina, 1, 1);	
+        StaminaMeter.GetComponent<RectTransform>().localScale = new Vector3(currentStamina / maxStamina, 1, 1);
+
+		ShieldMeter.GetComponent<RectTransform>().localScale = new Vector3(currentShield / maxShield, 1, 1);	
 	}
 }

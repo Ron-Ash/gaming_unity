@@ -244,8 +244,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 2
   sprint: 0
-  lightSprint: 0
-  tiredSprint: 0
   player: {fileID: 50331522700383738}
   moving: 0
   health_stamina_bars: {fileID: 0}

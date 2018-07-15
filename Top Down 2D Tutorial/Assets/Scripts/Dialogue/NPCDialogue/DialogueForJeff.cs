@@ -61,17 +61,20 @@ public class DialogueForJeff : MonoBehaviour {
 	{
 		NPCText.text = "what a starnge person";
 		modalPanel.closePanel();
+		Destroy(GetComponent<DialogueForJeff>());
 	}
 
 	void Yes2()
 	{
 		NPCText.text = "what a starnge person";
 		modalPanel.closePanel();
+		Destroy(GetComponent<DialogueForJeff>());
 	}
 
 	void Cancel2()
 	{
 		Debug.Log("f*#k you");
 		modalPanel.closePanel();
+		Destroy(GetComponent<DialogueForJeff>());
 	}
 }

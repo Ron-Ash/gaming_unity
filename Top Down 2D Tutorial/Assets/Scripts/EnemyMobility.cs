@@ -63,7 +63,7 @@ public class EnemyMobility : MonoBehaviour {
 			}
 			else
 			{
-				health_stamina.currentStamina -= (damage*1.5f);
+				health_stamina.currentShield -= damage;
 			}
 			StartAttackCounter();
 		}

@@ -125,6 +125,8 @@ MonoBehaviour:
   enemyHealth: 100
   damage: 25
   health_stamina_bars: {fileID: 0}
+  playerCollider: {fileID: 0}
+  playerGameObject: {fileID: 0}
 --- !u!114 &114899300322435512
 MonoBehaviour:
   m_ObjectHideFlags: 1
