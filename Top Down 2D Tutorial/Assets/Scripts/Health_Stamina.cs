@@ -48,7 +48,7 @@ public class Health_Stamina : MonoBehaviour {
 
 		if (currentHealth == 0)
         {
-            SceneManager.LoadScene(0);
+            Debug.Log("I am dead!!!");
         }
 
 		if (currentHealth < maxHealth && currentHealth > (maxHealth/2))
@@ -74,17 +74,17 @@ public class Health_Stamina : MonoBehaviour {
 		
 		if(currentStamina<maxStamina)
 		{
-			currentStamina += 0.1f;
+			currentStamina += 0.02f;
 		}
 
 		if(currentShield<maxShield)
 		{
-			currentShield += 0.05f;
+			currentShield += 0.02f;
 		}
 
 		if(currentHealth<maxHealth)
 		{
-			currentHealth += 0.05f;
+			currentHealth += 0.01f;
 		}
 
 		if(currentHealth< 0)

@@ -11,6 +11,7 @@ public class MeleeAttack : MonoBehaviour {
 	public GameObject health_stamina_bars;
 	Health_Stamina health_stamina;
 	public bool shield;
+	private bool attacking;
 
 	void Start () 
 	{
@@ -45,18 +46,26 @@ public class MeleeAttack : MonoBehaviour {
 			if(!Input.GetKey(KeyCode.LeftShift) && !Input.GetMouseButton(1))
 			{
 			
-				if(Input.GetButtonDown("Fire") && coll.gameObject.tag == "Enemy" && health_stamina.currentStamina > 0)
+				if(Input.GetButtonDown("Fire") && coll.gameObject.tag == "Enemy" && health_stamina.currentStamina > 0  && attacking == false)
 				{
-					shoot();
+					attacking = true;
+					StartingAttack();
 				}
 			}
 		}
 	}
 
-	void shoot()
+	void StartingAttack()
 	{
 		Debug.Log("swing...swoosh");
 		enemyMobility.enemyHealth -= weaponSwiching.damage;
-		health_stamina.currentStamina -= weaponSwiching.attackRate;
+		health_stamina.currentStamina -= weaponSwiching.damage;
+		Invoke("EndingAttack", weaponSwiching.attackRate);
+	}
+
+	void EndingAttack()
+	{
+		Debug.Log("Attack now!!!");
+		attacking = false;
 	}
 }

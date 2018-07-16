@@ -9,12 +9,8 @@ public class WeaponsStatsPickUp : MonoBehaviour {
 	public float range;
 	public bool melee;
 	public Collider2D weaponCollider;
-
 	public Renderer weaponRenderer;
 	public GameObject player;
-	public LayerMask hit;
-	public float ammo;
-	public float clipSize;
 
 	
 

@@ -7,14 +7,12 @@ public class WeaponSwiching : MonoBehaviour {
 
 	public int selectedWeapon = 0;
 	public Text weaponName;
+	public Text weaponStats;
 	WeaponsStatsPickUp weaponsStatsPickUp;
 	public float attackRate;
 	public float damage;
 	public float range;
 	public bool melee;
-	public float ammo;
-	public float clipSize;
-	public LayerMask hit;
 	public Collider2D weaponCollider;
 
 	void Start () 
@@ -67,15 +65,13 @@ public class WeaponSwiching : MonoBehaviour {
 				weaponName.text = weapon.gameObject.name;
 				weaponsStatsPickUp = weapon.gameObject.GetComponent<WeaponsStatsPickUp>();
 				
-				attackRate = weaponsStatsPickUp.attackRate;
 				weaponCollider = weaponsStatsPickUp.weaponCollider;
+				attackRate = weaponsStatsPickUp.attackRate;
 				damage = weaponsStatsPickUp.damage;
 				range = weaponsStatsPickUp.range;
 				melee = weaponsStatsPickUp.melee;
-				hit = weaponsStatsPickUp.hit;
-				ammo = weaponsStatsPickUp.ammo;
-				clipSize = weaponsStatsPickUp.clipSize;
 				weaponCollider.enabled = false;
+				weaponStats.text = damage + " | " + attackRate;
 	
 			}
 			else

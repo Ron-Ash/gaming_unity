@@ -80,18 +80,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7ccc26b5ccc29d46ad7e03c769dc80d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackRate: 10
+  attackRate: 1
   damage: 7.5
   range: 5
   melee: 1
   weaponCollider: {fileID: 58235807536031088}
   weaponRenderer: {fileID: 212320753793831770}
   player: {fileID: 0}
-  hit:
-    serializedVersion: 2
-    m_Bits: 2147483615
-  ammo: 25
-  clipSize: 5
 --- !u!212 &212320753793831770
 SpriteRenderer:
   m_ObjectHideFlags: 1
