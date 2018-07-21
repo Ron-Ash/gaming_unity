@@ -9,6 +9,7 @@ public class CamerSystemPrototype : MonoBehaviour {
     public float xMax;
     public float yMin;
     public float yMax;
+    public float shift;
     Vector3 mousePosition;
     Camera mainCamera;
     PlayerMobility playerMobility;
@@ -29,7 +30,7 @@ public class CamerSystemPrototype : MonoBehaviour {
 
         if(Input.GetKey(KeyCode.LeftShift))
         {
-            mainCamera.orthographicSize = 25f;
+            mainCamera.orthographicSize = shift;
             playerMobility.setMoving(false);
             lookAhead();
         }
